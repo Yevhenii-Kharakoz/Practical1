@@ -1,6 +1,6 @@
 # Перевірка, чи був переданий аргумент
 if ARGV.length != 2
-  puts "Введіть два аргументи: ваш вибір та вибір комп'ютера (наприклад, 'камінь папір')"
+  puts "Enter two arguments: your choice and the computer's choice (ex. 'rock paper')"
   exit
 end
 
@@ -11,17 +11,17 @@ computer_choice = ARGV[1].downcase
 # Перевірка правильності введених аргументів
 valid_choices = ["rock", "scissors", "paper"]
 unless valid_choices.include?(player_choice) && valid_choices.include?(computer_choice)
-  puts "Пожалуйста, виберіть один із наступних варіантів: камінь, ножиці, папір"
+  puts "Please choose one of the following options: rock, scissors, paper"
   exit
 end
 
 # Визначення результату гри
 if player_choice == computer_choice
-  puts "Нічия!"
+  puts "Draw!"
 elsif (player_choice == "rock" && computer_choice == "scissors") ||
   (player_choice == "scissors" && computer_choice == "paper") ||
   (player_choice == "paper" && computer_choice == "rock")
-  puts "Ви виграли!"
+  puts "You win!"
 else
-  puts "Ви програли!"
+  puts "You lost!"
 end
